@@ -46,6 +46,9 @@ jobs:
   publish:
     needs: build
     if: github.event_name == 'push'
+    permissions:
+      contents: read
+      packages: write
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/download-artifact@v4
